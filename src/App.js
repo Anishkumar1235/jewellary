@@ -27,12 +27,13 @@ import DiamondRingNosePin from "./pages/DiamondRingNosePin";
 import SilverItems from "./pages/SilverItems";
 import ForgotPassword from "./pages/ForgotPassword";
 import Logout from "../src/Logout";
+import Register from "./pages/Register"; // Import the register component
 
 const AppRoutes = () => {
   const location = useLocation();
 
   // List of paths where Sidebar should not be shown
-  const noSidebarPaths = ["/login", "/forgot-password"];
+  const noSidebarPaths = ["/login", "/forgot-password", "/register"];
 
   return (
     <div className="flex">
@@ -41,6 +42,7 @@ const AppRoutes = () => {
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/home" element={<Home />} />

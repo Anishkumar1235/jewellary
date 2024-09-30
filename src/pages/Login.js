@@ -25,6 +25,14 @@ const Login = () => {
     }, 5500); // Simulate delay for authentication
   };
 
+  const handleRegister = () => {
+    navigate("/register"); // Navigate to registration page
+  };
+
+  const handleForgotPassword = () => {
+    navigate("/forgot-password"); // Navigate to forgot password page
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4 sm:p-6 md:p-8 lg:p-10">
       <div className="bg-white p-6 sm:p-8 md:p-10 lg:p-12 rounded shadow-md w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl">
@@ -32,7 +40,7 @@ const Login = () => {
           Login
         </h1>
         <p className="text-base sm:text-lg font-bold mb-4 sm:mb-6 text-center">
-          Welcome to Manish Jewellers !
+          Welcome to Manish Jewellers!
         </p>
 
         {/* Show loader while logging in */}
@@ -50,57 +58,68 @@ const Login = () => {
             ></div>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm sm:text-base font-medium text-gray-700"
+          <>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm sm:text-base font-medium text-gray-700"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="mt-1 p-2 border border-gray-300 rounded w-full text-base sm:text-lg"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="password"
+                  className="block text-sm sm:text-base font-medium text-gray-700"
+                >
+                  Password
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="mt-1 p-2 border border-gray-300 rounded w-full text-base sm:text-lg"
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                className={`w-full bg-pink-500 hover:bg-pink-600 text-white py-2 rounded mt-4 text-base sm:text-lg ${
+                  loading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+                disabled={loading} // Disable button while loading
               >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 p-2 border border-gray-300 rounded w-full text-base sm:text-lg"
-                required
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="password"
-                className="block text-sm sm:text-base font-medium text-gray-700"
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 p-2 border border-gray-300 rounded w-full text-base sm:text-lg"
-                required
-              />
-            </div>
-            <div className="text-right">
+                {loading ? "Logging in..." : "Login"}
+              </button>
+            </form>
+
+            {/* Forgot Password and Register links */}
+            <div className="flex justify-between mt-4">
               <a
-                href="/forgot-password"
-                className="text-sm sm:text-base text-pink-500 hover:underline"
+                onClick={handleForgotPassword}
+                className="text-sm sm:text-base text-pink-500 hover:underline cursor-pointer"
               >
                 Forgot Password?
               </a>
+              <a
+                onClick={handleRegister}
+                className="text-sm sm:text-base text-pink-500 hover:underline cursor-pointer"
+              >
+                Register for a New Account
+              </a>
             </div>
-            <button
-              type="submit"
-              className={`w-full bg-pink-500 hover:bg-pink-600 text-white py-2 rounded mt-4 text-base sm:text-lg ${
-                loading ? "opacity-50 cursor-not-allowed" : ""
-              }`}
-              disabled={loading} // Disable button while loading
-            >
-              {loading ? "Logging in..." : "Login"}
-            </button>
-          </form>
+          </>
         )}
       </div>
     </div>

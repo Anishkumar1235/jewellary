@@ -12,6 +12,7 @@ import img9 from "../assets/img9.webp";
 import img10 from "../assets/img10.jpg";
 import img11 from "../assets/img11.jpg";
 import img12 from "../assets/img12.jpg";
+import img33 from "../assets/logo2.avif";
 
 const GoldRingsMens = () => {
   const navigate = useNavigate();
@@ -904,16 +905,94 @@ const GoldRingsMens = () => {
         </div>
       </div>
 
-      {/* Call to Action */}
-      <div className="mt-8 p-6 bg-pink-100 rounded-lg text-center">
-        <h2 className="text-2xl font-bold mb-4">Join Our Newsletter</h2>
-        <p className="mb-4">
-          Stay updated with our latest collections and exclusive offers.
-        </p>
-        <button className="bg-pink-500 text-white px-6 py-2 rounded-md font-semibold hover:bg-pink-600">
-          Subscribe Now
-        </button>
-      </div>
+      <footer className="bg-black text-white py-8 mt-40 rounded-[30px]">
+        <div className="w-full px-4 flex flex-col md:flex-row justify-between">
+          {/* Logo Section */}
+          <div className="mb-6 sm:mb-4">
+            <img src={img33} alt="Manish Jewellers Logo" className="h-16" />
+            <h2 className="text-lg font-semibold">Manish Jewellers</h2>
+          </div>
+
+          {/* Browse Links */}
+          <div className="mb-6 sm:mb-4">
+            <h3 className="font-semibold mb-2">Browse</h3>
+            <ul>
+              <li className="mb-1">
+                <a href="/home" className="hover:text-gray-400">
+                  Home
+                </a>
+              </li>
+              <li className="mb-1">
+                <a href="#" className="hover:text-gray-400">
+                  Services
+                </a>
+              </li>
+              <li className="mb-1">
+                <a href="#" className="hover:text-gray-400">
+                  Portfolio
+                </a>
+              </li>
+              <li>
+                <a href="/contacts" className="hover:text-gray-400">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal Links */}
+          <div className="mb-6 sm:mb-4">
+            <h3 className="font-semibold mb-2">Legal</h3>
+            <ul>
+              <li className="mb-1">
+                <a href="#" className="hover:text-gray-400">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-gray-400">
+                  T's & C's
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="mb-6 sm:mb-4">
+            <h3 className="font-semibold mb-2">Fancy a chat?</h3>
+            <ul>
+              <li className="mb-1">
+                <a href="tel:+917209767445" className="hover:text-gray-400">
+                  📞 +917209767445, 9334054080
+                </a>
+              </li>
+              <li className="mb-1">
+                <a
+                  href="mailto:rajeshswarnkar5080@gmail.com"
+                  className="hover:text-gray-400"
+                >
+                  📧 rajeshswarnkar5080@gmail.com
+                </a>
+              </li>
+              <li className="mb-1">
+                <a href="#" className="hover:text-gray-400">
+                  📸 @Manishjewellers
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-gray-400">
+                  💻 @Manish_Jewellers_creative
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Footer Bottom */}
+        <div className="border-t border-gray-700 mt-8 pt-4">
+          <p className="text-center text-gray-400">© 2024 Manish Jewellers</p>
+        </div>
+      </footer>
     </div>
   );
 };
