@@ -1,4 +1,3 @@
-// src/Login.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -105,18 +104,18 @@ const Login = () => {
             </form>
 
             {/* Forgot Password and Register links */}
-            <div className="flex justify-between mt-4">
+            <div className="flex justify-between mt-4 text-sm sm:text-base">
               <a
                 onClick={handleForgotPassword}
-                className="text-sm sm:text-base text-pink-500 hover:underline cursor-pointer"
+                className="text-pink-500 hover:underline cursor-pointer"
               >
                 Forgot Password?
               </a>
               <a
                 onClick={handleRegister}
-                className="text-sm sm:text-base text-pink-500 hover:underline cursor-pointer"
+                className="ml-auto text-pink-500 hover:underline cursor-pointer"
               >
-                Register for a New Account
+                Register Here?
               </a>
             </div>
           </>
