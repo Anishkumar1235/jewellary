@@ -1,5 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react"; // Ensure you import useState
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 import img1 from "../assets/Diamond1.webp";
 import img2 from "../assets/mangal1.jpeg";
@@ -36,6 +39,17 @@ const Diamond = () => {
 
   const handleBuyNow = (productId, img) => {
     navigate(`/product/${productId}`, { state: { img } }); // Use backticks here
+  };
+
+  const [cart, setCart] = useState([]); // Define the cart state
+
+  const handleAddToCart = (productId, img) => {
+    const newProduct = {
+      id: productId,
+      image: img, // Use the passed 'img' here
+    };
+    setCart((prevCart) => [...prevCart, newProduct]); // Add the product to the cart
+    console.log("Product added to cart:", newProduct);
   };
 
   return (
@@ -83,6 +97,12 @@ const Diamond = () => {
             >
               Buy Now
             </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
+            </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
             <img
@@ -108,6 +128,12 @@ const Diamond = () => {
               onClick={() => handleBuyNow(1, img2)} // Pass the product ID
             >
               Buy Now
+            </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
             </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
@@ -135,6 +161,12 @@ const Diamond = () => {
             >
               Buy Now
             </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
+            </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
             <img
@@ -160,6 +192,12 @@ const Diamond = () => {
               onClick={() => handleBuyNow(2, img4)} // Pass the product ID
             >
               Buy Now
+            </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
             </button>
           </div>
         </div>
@@ -193,6 +231,12 @@ const Diamond = () => {
             >
               Buy Now
             </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
+            </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
             <img
@@ -218,6 +262,12 @@ const Diamond = () => {
               onClick={() => handleBuyNow(2, img7)} // Pass the product ID
             >
               Buy Now
+            </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
             </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
@@ -245,6 +295,12 @@ const Diamond = () => {
             >
               Buy Now
             </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
+            </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
             <img
@@ -270,6 +326,12 @@ const Diamond = () => {
               onClick={() => handleBuyNow(1, img9)} // Pass the product ID
             >
               Buy Now
+            </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
             </button>
           </div>
         </div>
@@ -303,6 +365,12 @@ const Diamond = () => {
             >
               Buy Now
             </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
+            </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
             <img
@@ -328,6 +396,12 @@ const Diamond = () => {
               onClick={() => handleBuyNow(1, img11)} // Pass the product ID
             >
               Buy Now
+            </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
             </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
@@ -355,6 +429,12 @@ const Diamond = () => {
             >
               Buy Now
             </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
+            </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
             <img
@@ -380,6 +460,12 @@ const Diamond = () => {
               onClick={() => handleBuyNow(1, img13)} // Pass the product ID
             >
               Buy Now
+            </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
             </button>
           </div>
         </div>
@@ -422,6 +508,12 @@ const Diamond = () => {
             >
               Buy Now
             </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
+            </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
             <img
@@ -447,6 +539,12 @@ const Diamond = () => {
               onClick={() => handleBuyNow(1, img15)} // Pass the product ID
             >
               Buy Now
+            </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
             </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
@@ -474,6 +572,12 @@ const Diamond = () => {
             >
               Buy Now
             </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
+            </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
             <img
@@ -499,6 +603,12 @@ const Diamond = () => {
               onClick={() => handleBuyNow(1, img17)} // Pass the product ID
             >
               Buy Now
+            </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
             </button>
           </div>
         </div>
@@ -532,6 +642,12 @@ const Diamond = () => {
             >
               Buy Now
             </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
+            </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
             <img
@@ -557,6 +673,12 @@ const Diamond = () => {
               onClick={() => handleBuyNow(1, img19)} // Pass the product ID
             >
               Buy Now
+            </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
             </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
@@ -584,6 +706,12 @@ const Diamond = () => {
             >
               Buy Now
             </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
+            </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
             <img
@@ -609,6 +737,12 @@ const Diamond = () => {
               onClick={() => handleBuyNow(1, img21)} // Pass the product ID
             >
               Buy Now
+            </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
             </button>
           </div>
         </div>
@@ -642,6 +776,12 @@ const Diamond = () => {
             >
               Buy Now
             </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
+            </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
             <img
@@ -667,6 +807,12 @@ const Diamond = () => {
               onClick={() => handleBuyNow(1, img23)} // Pass the product ID
             >
               Buy Now
+            </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
             </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
@@ -694,6 +840,12 @@ const Diamond = () => {
             >
               Buy Now
             </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
+            </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
             <img
@@ -719,6 +871,12 @@ const Diamond = () => {
               onClick={() => handleBuyNow(1, img26)} // Pass the product ID
             >
               Buy Now
+            </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
             </button>
           </div>
         </div>
@@ -760,6 +918,12 @@ const Diamond = () => {
             >
               Buy Now
             </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
+            </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
             <img
@@ -785,6 +949,12 @@ const Diamond = () => {
               onClick={() => handleBuyNow(1, img29)} // Pass the product ID
             >
               Buy Now
+            </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
             </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
@@ -812,6 +982,12 @@ const Diamond = () => {
             >
               Buy Now
             </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
+            </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
             <img
@@ -837,6 +1013,12 @@ const Diamond = () => {
               onClick={() => handleBuyNow(1, img27)} // Pass the product ID
             >
               Buy Now
+            </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
             </button>
           </div>
         </div>
@@ -870,6 +1052,12 @@ const Diamond = () => {
             >
               Buy Now
             </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
+            </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
             <img
@@ -895,6 +1083,12 @@ const Diamond = () => {
               onClick={() => handleBuyNow(1, img29)} // Pass the product ID
             >
               Buy Now
+            </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
             </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
@@ -922,6 +1116,12 @@ const Diamond = () => {
             >
               Buy Now
             </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
+            </button>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md hover:bg-pink-200">
             <img
@@ -946,6 +1146,12 @@ const Diamond = () => {
               onClick={() => handleBuyNow(1, img17)} // Pass the product ID
             >
               Buy Now
+            </button>
+            <button
+              className="mt-2 border border-pink-500 text-yellow-500 px-4 py-2 rounded-md font-semibold hover:bg-green-600 ml-2"
+              onClick={() => handleAddToCart(1, img1)}
+            >
+              Add To Cart <FontAwesomeIcon icon={faCartPlus} className="ml-2" />
             </button>
           </div>
         </div>

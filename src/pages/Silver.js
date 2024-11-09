@@ -39,6 +39,7 @@ const Silver = () => {
   const handleBuyNow = (productId, img) => {
     navigate(`/product/${productId}`, { state: { img } }); // Use backticks here
   };
+
   return (
     <div className="p-4">
       <h1 className="text-4xl font-bold mt-16 text-center">Silver</h1>

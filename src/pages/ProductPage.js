@@ -10,6 +10,8 @@ const ProductPage = () => {
   );
   const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(84000); // Initial total price
+  const [couponCode, setCouponCode] = useState(""); // Coupon code input
+  const [couponDiscount, setCouponDiscount] = useState(0); // Coupon discount
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -43,6 +45,17 @@ const ProductPage = () => {
   const handleGoBack = () => {
     navigate(-1); // Go back to the previous page
   };
+
+  const handleApplyCoupon = () => {
+    if (couponCode === "Anish100") {
+      setCouponDiscount(100); // Apply ₹100 discount
+    } else {
+      alert("Invalid Coupon Code");
+    }
+  };
+
+  // Adjusted total price after applying coupon
+  const adjustedTotalPrice = totalPrice - couponDiscount + 20; // Adding platform fee
 
   return (
     <div className="p-4 sm:p-6 md:p-8 lg:p-10 max-w-screen-xxl mx-auto">
@@ -134,7 +147,7 @@ const ProductPage = () => {
             {/* Price and Discount */}
             <div className="mt-4">
               <p className="font-bold text-lg sm:text-xl md:text-2xl text-gray-700">
-                ₹{totalPrice.toLocaleString()}
+                ₹{adjustedTotalPrice.toLocaleString()}
                 <span className="line-through text-sm text-gray-400">
                   ₹98,000
                 </span>
@@ -167,9 +180,21 @@ const ProductPage = () => {
                   Rs. 100 off on minimum purchase of Rs. 599
                 </p>
               </div>
-              <button className="bg-pink-500 text-white text-xs sm:text-sm px-3 py-2 rounded">
-                APPLY COUPON
-              </button>
+              <div className="flex">
+                <input
+                  type="text"
+                  value={couponCode}
+                  onChange={(e) => setCouponCode(e.target.value)}
+                  className="border border-gray-300 rounded p-2 text-sm sm:text-base"
+                  placeholder="Enter coupon code"
+                />
+                <button
+                  onClick={handleApplyCoupon}
+                  className="bg-pink-500 text-white text-xs sm:text-sm px-3 py-2 rounded ml-2"
+                >
+                  APPLY COUPON
+                </button>
+              </div>
             </div>
             <div className="text-xs text-gray-500 mt-2">SORRYDE3PMNRNW</div>
           </div>
@@ -199,20 +224,7 @@ const ProductPage = () => {
             </div>
             <div className="flex justify-between font-bold mt-2">
               <span>Total Amount</span>
-              <span>₹{totalPrice + 20}</span>
-            </div>
-          </div>
-
-          {/* Bottom Section */}
-          <div className="flex flex-col sm:flex-row justify-between items-center mt-6">
-            <div>
-              <span className="text-xs sm:text-sm">Genuine Products</span>
-              <span className="text-xs sm:text-sm ml-4">
-                Contactless Delivery
-              </span>
-            </div>
-            <div>
-              <span className="text-xs sm:text-sm">Secure Payments</span>
+              <span>₹{adjustedTotalPrice.toLocaleString()}</span>
             </div>
           </div>
         </div>

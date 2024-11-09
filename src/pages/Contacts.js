@@ -102,7 +102,28 @@ const Contacts = () => {
             </form>
           </div>
         </div>
+
+        {/* Google Map Location Section */}
+        <div className="mt-12">
+          <h2 className="text-2xl font-semibold mb-4">Our Location</h2>
+          <div
+            className="w-full"
+            style={{ maxWidth: "1200px", margin: "0 auto" }}
+          >
+            <iframe
+              title="Google Maps Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10816.786199393084!2d85.81715316757944!3d23.742184385051647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f3c5c02a5b2cb7%3A0x3be25b7da50670ed!2sGomia%20Main%20Rd%2C%20Jharkhand%2C%20India!5e0!3m2!1sen!2sus!4v1686824854764!5m2!1sen!2sus"
+              width="100%" // Ensure it takes up the full width of the parent container
+              height="500" // Adjust the height if needed
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
       </div>
+
+      {/* Footer Section */}
       <footer className="bg-black text-white py-8 mt-40 rounded-[30px]">
         <div className="w-full px-4 flex flex-col md:flex-row justify-between">
           {/* Logo Section */}

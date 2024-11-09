@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaCashRegister, FaGooglePay } from "react-icons/fa";
+import { FaCashRegister, FaGooglePay, FaMobileAlt } from "react-icons/fa"; // Add relevant icon for PhonePe
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const PaymentPage = () => {
@@ -43,7 +43,7 @@ const PaymentPage = () => {
               />
               <label
                 htmlFor="card"
-                className="flex items-center text-xs sm:text-sm"
+                className="flex items-center text-xs sm:text-sm font-bold" // Added font-bold
               >
                 <span className="mr-1">Card Payment</span>
               </label>
@@ -60,7 +60,7 @@ const PaymentPage = () => {
               />
               <label
                 htmlFor="cash"
-                className="flex items-center text-xs sm:text-sm"
+                className="flex items-center text-xs sm:text-sm font-bold" // Added font-bold
               >
                 <span className="mr-1">Cash on Delivery</span>
                 <FaCashRegister className="text-green-500 text-base ml-1" />
@@ -78,10 +78,30 @@ const PaymentPage = () => {
               />
               <label
                 htmlFor="googlePay"
-                className="flex items-center text-xs sm:text-sm"
+                className="flex items-center text-xs sm:text-sm font-bold" // Added font-bold
               >
                 <span className="mr-1">Google Pay</span>
                 <FaGooglePay className="text-blue-500 text-base ml-1" />
+              </label>
+            </div>
+            {/* Add PhonePe option */}
+            <div className="flex items-center mb-2">
+              <input
+                type="radio"
+                id="phonePe"
+                name="paymentMethod"
+                value="phonePe"
+                checked={paymentMethod === "phonePe"}
+                onChange={handlePaymentMethodChange}
+                className="mr-1"
+              />
+              <label
+                htmlFor="phonePe"
+                className="flex items-center text-xs sm:text-sm font-bold" // Added font-bold
+              >
+                <span className="mr-1">PhonePe</span>
+                <FaMobileAlt className="text-yellow-500 text-base ml-1" />{" "}
+                {/* Added PhonePe Icon */}
               </label>
             </div>
           </div>
